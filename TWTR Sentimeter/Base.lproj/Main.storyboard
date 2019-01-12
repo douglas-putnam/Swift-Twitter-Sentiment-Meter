@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycm-pZ-vO6">
-                                <rect key="frame" x="20" y="90" width="335" height="137"/>
+                                <rect key="frame" x="20" y="90" width="335" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="140" id="Fcv-BA-dtZ"/>
                                 </constraints>
@@ -37,13 +37,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Emoji_Skeptical2" translatesAutoresizingMaskIntoConstraints="NO" id="j6w-DP-VSx">
-                                <rect key="frame" x="75" y="257" width="225" height="225"/>
-                                <color key="backgroundColor" red="0.27303004260000002" green="0.67554765939999994" blue="0.93212455510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="j6w-DP-VSx" secondAttribute="height" multiplier="1:1" id="ti0-0u-wrc"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmo-Ic-QLa">
                                 <rect key="frame" x="20" y="597" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,6 +71,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSB-VR-A3n">
+                                <rect key="frame" x="76.5" y="260" width="222" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QSB-VR-A3n" secondAttribute="height" multiplier="1:1" id="7mh-3q-6mh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.27303004264831543" green="0.67554765939712524" blue="0.9321245551109314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -87,13 +89,13 @@
                             <constraint firstItem="bmo-Ic-QLa" firstAttribute="top" secondItem="xps-Gj-0f9" secondAttribute="bottom" constant="10" id="FPW-1d-U8p"/>
                             <constraint firstItem="bmo-Ic-QLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="H2p-29-LJp"/>
                             <constraint firstItem="xps-Gj-0f9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="I60-S2-9W6"/>
-                            <constraint firstItem="j6w-DP-VSx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J3z-iU-q4C"/>
                             <constraint firstItem="xps-Gj-0f9" firstAttribute="top" secondItem="Llh-r9-pfz" secondAttribute="bottom" constant="30" id="KcY-t7-qB7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xps-Gj-0f9" secondAttribute="trailing" constant="20" id="PfI-3p-yMD"/>
+                            <constraint firstItem="QSB-VR-A3n" firstAttribute="top" secondItem="Ycm-pZ-vO6" secondAttribute="bottom" constant="30" id="QoY-SY-cv2"/>
                             <constraint firstItem="6sU-UA-2GI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="R0K-NC-Bxn"/>
+                            <constraint firstItem="Llh-r9-pfz" firstAttribute="top" secondItem="QSB-VR-A3n" secondAttribute="bottom" constant="10" id="Yds-uU-sby"/>
                             <constraint firstItem="Llh-r9-pfz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bat-ND-0nS"/>
-                            <constraint firstItem="j6w-DP-VSx" firstAttribute="top" secondItem="Ycm-pZ-vO6" secondAttribute="bottom" constant="30" id="cMs-TB-IlG"/>
-                            <constraint firstItem="Llh-r9-pfz" firstAttribute="top" secondItem="j6w-DP-VSx" secondAttribute="bottom" constant="10" id="eRn-gK-vy4"/>
+                            <constraint firstItem="QSB-VR-A3n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eFi-mz-HNK"/>
                             <constraint firstItem="6sU-UA-2GI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gxC-HT-JBj"/>
                             <constraint firstItem="Ycm-pZ-vO6" firstAttribute="top" secondItem="6sU-UA-2GI" secondAttribute="bottom" constant="10" id="l6J-kA-uqs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6sU-UA-2GI" secondAttribute="trailing" constant="20" id="lW0-r9-Aga"/>
@@ -103,7 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Ycm-pZ-vO6" id="ODA-iv-2In"/>
-                        <outlet property="emojiView" destination="j6w-DP-VSx" id="TWU-kO-5Vc"/>
+                        <outlet property="emojiLabel" destination="QSB-VR-A3n" id="4Vg-f9-MPh"/>
                         <outlet property="scoreLabel" destination="Llh-r9-pfz" id="RpQ-8J-Fm9"/>
                         <outlet property="textField" destination="xps-Gj-0f9" id="TF4-Vw-tr9"/>
                     </connections>
@@ -113,7 +115,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Emoji_Skeptical2" width="225" height="225"/>
-    </resources>
 </document>

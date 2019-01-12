@@ -8,9 +8,10 @@
 
 import CoreML
 import SwifteriOS
+import SwiftyJSON
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     // PARAMETERS
     
@@ -18,7 +19,6 @@ class ViewController: UIViewController {
     
     // Instantiation using Twitter's OAuth Consumer Key and secret
     let swifter = Swifter(consumerKey: TWITTER_CONSUMER_KEY, consumerSecret: TWITTER_CONSUMER_SECRET)
-    var searchString = "@Apple"
     
     // MARK: CORE ML PARAMETERS
     
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     // MARK: UI PARAMETERS
     
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var emojiView: UIImageView!
+    @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
@@ -37,31 +37,80 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        swifter.searchTweet(using: searchString, lang: "en", resultType: "recent", count: 100, tweetMode: .extended, success: {(results, metadata) in
-            print(results)
+        emojiLabel.text = "🤓"
+        textField.delegate = self
+    }
+    
+    // MARK: SCORE TEXT
+    func score(sentimentSearch: String) {
+        // query twitter api
+        swifter.searchTweet(using: sentimentSearch, lang: "en", resultType: "recent", count: 100, tweetMode: .extended, success: {(results, metadata) in
+            var tweets = [sentimentClassifierInput]()
+            
+            // extract tweet strings out of JSON results
+            for i in 0...99 {
+                if let tweet = results[i]["full_text"].string {
+                    let tweetForClassificaiton = sentimentClassifierInput(text: tweet)
+                    tweets.append(tweetForClassificaiton)
+                }
+            }
+            
+            do {
+                // predict sentiments for tweet strings
+                let sentiments = try self.classifier.predictions(inputs: tweets)
+                
+                // score sentiments
+                var sentimentScore = 0
+                for sentiment in sentiments {
+                    let text = sentiment.label
+                    if text == "Pos" {
+                        sentimentScore += 1
+                        print("pos")
+                    } else if text == "Neg" {
+                        sentimentScore += -1
+                        print("neg")
+                    } else {
+                        print("neutral")
+                    }
+                }
+                
+                // update UI
+                self.updateUI(with: sentimentScore)
+                
+            } catch {
+                print("Failed to generate predictions. Error details: \(error)")
+            }
+            
         }) { (error) in
             print("There was an error while processing your search: \(error)")
         }
+    }
+    
+    // Methods to update UI with new score
+    func updateUI(with score: Int) {
+        scoreLabel.text = "\(score)"
         
-//        swifter.searchTweet(using: <#T##String#>, geocode: <#T##String?#>, lang: <#T##String?#>, locale: <#T##String?#>, resultType: <#T##String?#>, count: <#T##Int?#>, until: <#T##String?#>, sinceID: <#T##String?#>, maxID: <#T##String?#>, includeEntities: <#T##Bool?#>, callback: <#T##String?#>, tweetMode: <#T##TweetMode#>, success: <#T##Swifter.SearchResultHandler?##Swifter.SearchResultHandler?##(JSON, JSON) -> Void#>, failure: <#T##Swifter.FailureHandler##Swifter.FailureHandler##(Error) -> Void#>)
-    }
-    
-
-    func predict(text: String) -> String {
-        do {
-            let result = try classifier.prediction(text: "I love @Apple")
-            return result.label
-        } catch {
-            print("Failed to generate prediction for \(text). Error details: \(error)")
+        switch score {
+            case -100 ... -40: emojiLabel.text = "🤢"
+            case -39 ... -20: emojiLabel.text = "😫"
+            case -19 ... -10: emojiLabel.text = "😡"
+            case -9 ... -5: emojiLabel.text = "🤨"
+            case -4 ... 4: emojiLabel.text = "😐"
+            case 5 ... 14: emojiLabel.text = "🙂"
+            case 15 ... 39: emojiLabel.text = "😀"
+            case 40 ... 100: emojiLabel.text = "🤩"
+            default: emojiLabel.text = "😶"
         }
-        return ""
     }
 
-    
-
+    // Call method when user taps 'predict sentiment' button
     @IBAction func predictTapped(_ sender: Any) {
+        if let searchText = textField.text {
+            score(sentimentSearch: searchText)
+        } else {
+            descriptionLabel.text = "Enter text into the field below. Then press button."
+        }
+        
     }
 }
 
