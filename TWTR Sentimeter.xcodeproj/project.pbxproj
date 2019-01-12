@@ -14,6 +14,8 @@
 		5FA4E7E321E8D641003FE26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4E7E121E8D641003FE26B /* LaunchScreen.storyboard */; };
 		5FA4E7FC21E8D6B3003FE26B /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA4E7F521E8D6A3003FE26B /* SwifteriOS.framework */; };
 		5FA4E7FD21E8D6B3003FE26B /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FA4E7F521E8D6A3003FE26B /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5FA4E80221EA4FBA003FE26B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4E80121EA4FBA003FE26B /* Constants.swift */; };
+		5FA4E80521EA6B52003FE26B /* sentimentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4E80421EA6B52003FE26B /* sentimentClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		5FA4E7E221E8D641003FE26B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FA4E7E421E8D641003FE26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FA4E7EA21E8D6A3003FE26B /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = "../*Open Source Projects/Swifter/Swifter.xcodeproj"; sourceTree = "<group>"; };
+		5FA4E80121EA4FBA003FE26B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5FA4E80421EA6B52003FE26B /* sentimentClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = sentimentClassifier.mlmodel; path = "../../*Classifiers/sentimentClassifier.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +124,12 @@
 			children = (
 				5FA4E7D821E8D640003FE26B /* AppDelegate.swift */,
 				5FA4E7DA21E8D640003FE26B /* ViewController.swift */,
+				5FA4E80121EA4FBA003FE26B /* Constants.swift */,
 				5FA4E7DC21E8D640003FE26B /* Main.storyboard */,
 				5FA4E7DF21E8D641003FE26B /* Assets.xcassets */,
 				5FA4E7E121E8D641003FE26B /* LaunchScreen.storyboard */,
 				5FA4E7E421E8D641003FE26B /* Info.plist */,
+				5FA4E80421EA6B52003FE26B /* sentimentClassifier.mlmodel */,
 			);
 			path = "TWTR Sentimeter";
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			files = (
 				5FA4E7DB21E8D640003FE26B /* ViewController.swift in Sources */,
 				5FA4E7D921E8D640003FE26B /* AppDelegate.swift in Sources */,
+				5FA4E80221EA4FBA003FE26B /* Constants.swift in Sources */,
+				5FA4E80521EA6B52003FE26B /* sentimentClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
