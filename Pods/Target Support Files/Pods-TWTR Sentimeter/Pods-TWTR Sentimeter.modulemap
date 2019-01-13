@@ -1,0 +1,6 @@
+framework module Pods_TWTR_Sentimeter {
+  umbrella header "Pods-TWTR Sentimeter-umbrella.h"
+
+  export *
+  module * { export * }
+}
