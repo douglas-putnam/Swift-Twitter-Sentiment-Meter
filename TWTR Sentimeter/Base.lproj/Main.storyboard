@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,68 +15,69 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TWTR_Sentimeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TWTR SENTIMETER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sU-UA-2GI">
-                                <rect key="frame" x="20" y="40" width="335" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SENTI-METER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sU-UA-2GI">
+                                <rect key="frame" x="20" y="30" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tWZ-Ky-pzI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycm-pZ-vO6">
-                                <rect key="frame" x="20" y="90" width="335" height="140"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycm-pZ-vO6">
+                                <rect key="frame" x="20" y="80" width="280" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="140" id="Fcv-BA-dtZ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="Fcv-BA-dtZ"/>
                                 </constraints>
-                                <string key="text">Enter a hashtag, like #TWTR, or handle, like @Apple, and see what the general sentiment is. The score can range from -100 to 100. The higher the score, the more positive the sentiment.</string>
+                                <string key="text">Score a hashtag, like #TWTR, or handle, like @Apple, and see what the general sentiment is on Twitter. The score can range from -100 to 100. The higher the score, the more positive the sentiment.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmo-Ic-QLa">
-                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <rect key="frame" x="20" y="503" width="280" height="45"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="qHz-0L-6JD"/>
+                                    <constraint firstAttribute="height" constant="45" id="qHz-0L-6JD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <state key="normal" title="PREDICT SENTIMENT">
+                                <state key="normal" title="SCORE">
                                     <color key="titleColor" red="0.27303004260000002" green="0.67554765939999994" blue="0.93212455510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="predictTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9F8-gG-O1J"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@Apple" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xps-Gj-0f9">
-                                <rect key="frame" x="20" y="547" width="335" height="40"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@Apple" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xps-Gj-0f9">
+                                <rect key="frame" x="20" y="453" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DYd-2x-NdI"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="JaV-Fa-ZJh"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="twitter" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llh-r9-pfz">
-                                <rect key="frame" x="112.5" y="492" width="150" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llh-r9-pfz">
+                                <rect key="frame" x="85" y="354" width="150" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="LuQ-pb-Pog"/>
                                     <constraint firstAttribute="width" constant="150" id="upj-wT-Nrj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSB-VR-A3n">
-                                <rect key="frame" x="76.5" y="260" width="222" height="222"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSB-VR-A3n">
+                                <rect key="frame" x="118" y="260" width="84" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QSB-VR-A3n" secondAttribute="height" multiplier="1:1" id="7mh-3q-6mh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="jOZ-dG-wVJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -89,23 +90,25 @@
                             <constraint firstItem="bmo-Ic-QLa" firstAttribute="top" secondItem="xps-Gj-0f9" secondAttribute="bottom" constant="10" id="FPW-1d-U8p"/>
                             <constraint firstItem="bmo-Ic-QLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="H2p-29-LJp"/>
                             <constraint firstItem="xps-Gj-0f9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="I60-S2-9W6"/>
-                            <constraint firstItem="xps-Gj-0f9" firstAttribute="top" secondItem="Llh-r9-pfz" secondAttribute="bottom" constant="30" id="KcY-t7-qB7"/>
+                            <constraint firstItem="xps-Gj-0f9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Llh-r9-pfz" secondAttribute="bottom" constant="20" id="KcY-t7-qB7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xps-Gj-0f9" secondAttribute="trailing" constant="20" id="PfI-3p-yMD"/>
-                            <constraint firstItem="QSB-VR-A3n" firstAttribute="top" secondItem="Ycm-pZ-vO6" secondAttribute="bottom" constant="30" id="QoY-SY-cv2"/>
-                            <constraint firstItem="6sU-UA-2GI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="R0K-NC-Bxn"/>
+                            <constraint firstItem="QSB-VR-A3n" firstAttribute="top" secondItem="Ycm-pZ-vO6" secondAttribute="bottom" constant="20" id="QoY-SY-cv2"/>
+                            <constraint firstItem="6sU-UA-2GI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="R0K-NC-Bxn"/>
                             <constraint firstItem="Llh-r9-pfz" firstAttribute="top" secondItem="QSB-VR-A3n" secondAttribute="bottom" constant="10" id="Yds-uU-sby"/>
                             <constraint firstItem="Llh-r9-pfz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bat-ND-0nS"/>
                             <constraint firstItem="QSB-VR-A3n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eFi-mz-HNK"/>
                             <constraint firstItem="6sU-UA-2GI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gxC-HT-JBj"/>
                             <constraint firstItem="Ycm-pZ-vO6" firstAttribute="top" secondItem="6sU-UA-2GI" secondAttribute="bottom" constant="10" id="l6J-kA-uqs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6sU-UA-2GI" secondAttribute="trailing" constant="20" id="lW0-r9-Aga"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bmo-Ic-QLa" secondAttribute="bottom" constant="20" id="yCR-44-6pz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bmo-Ic-QLa" secondAttribute="bottom" constant="20" id="ms0-fU-bVl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Ycm-pZ-vO6" id="ODA-iv-2In"/>
+                        <outlet property="descriptionLabelHeight" destination="Fcv-BA-dtZ" id="KCt-WF-pXq"/>
                         <outlet property="emojiLabel" destination="QSB-VR-A3n" id="4Vg-f9-MPh"/>
+                        <outlet property="predictButton" destination="bmo-Ic-QLa" id="JkR-au-2sb"/>
                         <outlet property="scoreLabel" destination="Llh-r9-pfz" id="RpQ-8J-Fm9"/>
                         <outlet property="textField" destination="xps-Gj-0f9" id="TF4-Vw-tr9"/>
                     </connections>

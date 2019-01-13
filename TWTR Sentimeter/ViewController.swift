@@ -30,6 +30,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var predictButton: UIButton!
+    @IBOutlet weak var descriptionLabelHeight: NSLayoutConstraint!
     
     // MARK: - METHODS
     // MARK: VIEW CONTROLLER METHODS
@@ -88,7 +90,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // Methods to update UI with new score
     func updateUI(with score: Int) {
-        scoreLabel.text = "\(score)"
+        scoreLabel.text = "Score: \(score)"
         
         switch score {
             case -100 ... -40: emojiLabel.text = "🤢"
@@ -103,6 +105,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        descriptionLabel.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        predictButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -240).isActive = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //view.endEditing(true)
+        descriptionLabel.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        predictButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        if let searchText = textField.text {
+            score(sentimentSearch: searchText)
+        } else {
+            descriptionLabel.text = "Enter text into the field below. Then press button."
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        descriptionLabel.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: emojiLabel.topAnchor, constant: 0).isActive = true
+        
+        predictButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+    }
+    
     // Call method when user taps 'predict sentiment' button
     @IBAction func predictTapped(_ sender: Any) {
         if let searchText = textField.text {
@@ -110,7 +136,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             descriptionLabel.text = "Enter text into the field below. Then press button."
         }
-        
     }
 }
 
